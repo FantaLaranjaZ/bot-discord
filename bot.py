@@ -4,6 +4,7 @@ from PIL import Image, ImageSequence
 import requests
 from io import BytesIO
 from discord.ui import Button, View, Modal, TextInput
+import os
 
 # Configurações e Inicialização
 intents = discord.Intents.default()
@@ -143,4 +144,5 @@ async def hello(interaction: discord.Interaction):
 
 
 # Rodar o bot
-bot.run('discord token')
+TOKEN = os.getenv('DISCORD_TOKEN')
+bot.run(TOKEN)
